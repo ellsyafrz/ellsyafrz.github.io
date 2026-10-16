@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1d4d" />
+  <title>Shaufani Aqilla Elsyafaraz | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+    :root{--navy:#071536;--blue:#123b82;--sky:#8ed8ff;--ice:#eaf7ff;--white:#f8fcff;--muted:#b8c9e7;--line:rgba(255,255,255,.15)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:85px}
+    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.65;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 80% 10%,rgba(48,126,222,.28),transparent 35%),radial-gradient(ellipse at 0% 65%,rgba(48,126,222,.16),transparent 36%),linear-gradient(145deg,#071536 0%,#0a2050 55%,#071536 100%)}
+    a{color:inherit;text-decoration:none}
+    .stars{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.45;background-image:radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 75% 20%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 60% 70%,#9bdfff 50%,transparent 60%),radial-gradient(1px 1px at 35% 80%,#fff 50%,transparent 60%);background-size:240px 220px,300px 280px,360px 330px,280px 260px}
+    .container{width:min(1120px,90%);margin:auto}
+    nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(7,21,54,.78);border-bottom:1px solid var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:700;letter-spacing:.08em;font-size:.92rem}.brand span{color:var(--sky)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:.9rem;color:var(--muted)}
+    .nav-links a{transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--sky)}
+    .menu-btn{display:none;background:none;color:white;border:1px solid var(--line);padding:7px 11px;border-radius:10px;font-size:1.1rem}
+    section{padding:100px 0}
+    .hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px;padding-top:75px;padding-bottom:80px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid rgba(142,216,255,.35);border-radius:999px;color:var(--sky);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(142,216,255,.07)}
+    .dot{width:7px;height:7px;background:#8ed8ff;border-radius:50%;box-shadow:0 0 14px #8ed8ff}
+    h1,h2,h3{line-height:1.15}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.4rem);letter-spacing:-.04em;margin:25px 0 20px}
+    h1 em{font-style:normal;color:var(--sky)}
+    .hero p{max-width:570px;color:var(--muted);font-size:1.05rem}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:13px;font-weight:700;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-3px)}
+    .primary{background:linear-gradient(120deg,#a3e4ff,#5db9f3);color:#071536;box-shadow:0 10px 30px rgba(93,185,243,.2)}
+    .secondary{border:1px solid var(--line);color:var(--white);background:rgba(255,255,255,.04)}
+    .hero-art{position:relative;display:grid;place-items:center;min-height:420px}
+    .orbit{position:absolute;width:min(390px,85vw);aspect-ratio:1;border:1px solid rgba(142,216,255,.24);border-radius:50%;animation:rotate 28s linear infinite}
+    .orbit:before,.orbit:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--sky);box-shadow:0 0 25px #8ed8ff}
+    .orbit:before{top:15%;left:15%}.orbit:after{bottom:17%;right:10%;width:7px;height:7px}
+    .portrait-card{position:relative;width:min(290px,75vw);height:350px;border:1px solid rgba(255,255,255,.22);border-radius:150px 150px 30px 30px;background:linear-gradient(155deg,rgba(142,216,255,.23),rgba(31,74,145,.16));box-shadow:0 25px 90px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .portrait-card:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,#72c9ff 0%,rgba(65,143,224,.22) 55%,transparent 70%);top:30px}
+    .monogram{position:relative;font-family:'Playfair Display',serif;font-size:6rem;color:#eaf7ff;text-shadow:0 0 35px rgba(142,216,255,.6);letter-spacing:-.1em}
+    .floating-note{position:absolute;padding:13px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(11,31,73,.86);backdrop-filter:blur(12px);box-shadow:0 15px 40px rgba(0,0,0,.18);font-size:.82rem}
+    .floating-note strong{display:block;color:var(--sky);font-size:1rem}.note-one{top:14%;right:-2%}.note-two{bottom:12%;left:-2%}
+    .section-head{margin-bottom:38px;max-width:650px}.kicker{color:var(--sky);text-transform:uppercase;font-size:.78rem;letter-spacing:.18em;font-weight:700}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4vw,3.3rem);margin:12px 0 15px}
+    .section-head p,.muted{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
+    .glass{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:28px}
+    .quote-mark{font-family:'Playfair Display',serif;font-size:4rem;line-height:.8;color:var(--sky)}
+    .about-quote{font-family:'Playfair Display',serif;font-size:1.45rem;line-height:1.5;margin:18px 0}
+    .info-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+    .info-item{padding:15px;border-radius:14px;background:rgba(142,216,255,.06);border:1px solid rgba(142,216,255,.12)}
+    .info-item small{display:block;color:var(--muted);font-size:.76rem;margin-bottom:4px}.info-item strong{font-size:.95rem}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .project-card{min-height:255px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+    .project-card:hover{transform:translateY(-6px);border-color:rgba(142,216,255,.5)}
+    .project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+    .project-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:rgba(142,216,255,.12);font-size:1.5rem}
+    .tag{font-size:.72rem;color:var(--sky);border:1px solid rgba(142,216,255,.28);padding:6px 10px;border-radius:999px}
+    .project-card h3{font-size:1.3rem;margin-bottom:10px}.project-card p{color:var(--muted);font-size:.92rem}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-card{text-align:center;padding:30px 22px}
+    .skill-symbol{font-size:2rem;width:68px;height:68px;display:grid;place-items:center;border-radius:22px;margin:0 auto 20px;background:linear-gradient(145deg,rgba(142,216,255,.2),rgba(142,216,255,.04));border:1px solid rgba(142,216,255,.2)}
+    .skill-card h3{margin-bottom:9px}.skill-card p{color:var(--muted);font-size:.88rem}
+    .experience-wrap{position:relative;padding-left:30px;border-left:1px solid rgba(142,216,255,.35);margin-left:10px}
+    .timeline-item{position:relative;padding:0 0 35px 18px}.timeline-item:last-child{padding-bottom:0}
+    .timeline-item:before{content:"";position:absolute;left:-36px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--sky);box-shadow:0 0 20px rgba(142,216,255,.65);border:3px solid var(--navy)}
+    .timeline-item .year{font-size:.78rem;color:var(--sky);letter-spacing:.1em;text-transform:uppercase}
+    .timeline-item h3{font-size:1.2rem;margin:8px 0}.timeline-item p{color:var(--muted);max-width:700px}
+    .contact-box{text-align:center;padding:55px 28px;background:radial-gradient(ellipse at 50% 0%,rgba(69,151,226,.2),transparent 65%),rgba(255,255,255,.035)}
+    .contact-box p{color:var(--muted);max-width:540px;margin:0 auto 25px}
+    footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    @media(max-width:760px){.nav-inner{height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 5%;background:rgba(7,21,54,.97);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.nav-links.open{display:flex}.hero{grid-template-columns:1fr;text-align:center;padding-top:60px;gap:10px}.hero p{margin:auto}.hero-actions{justify-content:center}.hero-art{min-height:390px}.note-one{right:0}.note-two{left:0}.about-grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.skill-card{padding:25px}.info-list{grid-template-columns:1fr 1fr}section{padding:75px 0}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#beranda">SA<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu navigasi" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#beranda" class="active">Beranda</a><a href="#tentang">Tentang</a><a href="#project">Project</a><a href="#skill">Skill</a><a href="#experience">Experience</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container hero" id="beranda">
+      <div class="hero-copy reveal">
+        <span class="eyebrow"><span class="dot"></span> Portfolio pribadi · 2026</span>
+        <h1>Hello,<br>I'm <em>Shaufani.</em></h1>
+        <p>Assalamu’alaikum! Selamat datang di ruang kecil saya. Saya Shaufani Aqilla Elsyafaraz, seorang santri MA Persis Padalarang yang senang mengekspresikan diri melalui musik dan terus berani mencoba hal baru.</p>
+        <div class="hero-actions"><a class="btn primary" href="#tentang">Kenali Saya <span>↗</span></a><a class="btn secondary" href="#project">Lihat Perjalanan <span>↓</span></a></div>
+      </div>
+      <div class="hero-art reveal" aria-label="Monogram dekoratif SA">
+        <div class="orbit"></div><div class="portrait-card"><span class="monogram">SA.</span></div>
+        <div class="floating-note note-one"><strong>♪ Music</strong><span>My happy place</span></div>
+        <div class="floating-note note-two"><strong>✦ Keep growing</strong><span>One step at a time</span></div>
+      </div>
+    </section>
+
+    <section class="container" id="tentang">
+      <div class="section-head reveal"><span class="kicker">01 — Tentang saya</span><h2>Small steps, <em style="color:var(--sky)">big dreams.</em></h2><p>Saya percaya setiap pengalaman adalah kesempatan untuk belajar, berkembang, dan mengenal potensi diri.</p></div>
+      <div class="about-grid">
+        <div class="glass reveal"><div class="quote-mark">“</div><p class="about-quote">Berani mencoba, terus belajar, dan jangan berhenti bermimpi.</p><p class="muted">Menjalani proses dengan hati yang tulus dan semangat yang positif.</p></div>
+        <div class="glass reveal"><h3 style="font-size:1.25rem;margin-bottom:8px">A little about me</h3><p class="muted">Saya adalah santri yang sedang belajar menyeimbangkan pendidikan, pengalaman, dan minat pribadi. Menyanyi menjadi salah satu cara saya mengekspresikan perasaan, melatih kepercayaan diri, dan memberikan yang terbaik di setiap kesempatan.</p>
+          <div class="info-list"><div class="info-item"><small>Nama</small><strong>Shaufani Aqilla Elsyafaraz</strong></div><div class="info-item"><small>Sekolah</small><strong>MA Persis Padalarang</strong></div><div class="info-item"><small>Minat</small><strong>Seni & musik</strong></div><div class="info-item"><small>Prinsip</small><strong>Belajar & bertumbuh</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="project">
+      <div class="section-head reveal"><span class="kicker">02 — Project</span><h2>Every stage is a <em style="color:var(--sky)">story.</em></h2><p>Pengalaman dan kegiatan yang menjadi bagian dari perjalanan saya dalam mengembangkan diri.</p></div>
+      <div class="projects">
+        <article class="glass project-card reveal"><div class="project-top"><div class="project-icon">🏆</div><span class="tag">Kompetisi</span></div><h3>Perlombaan Menyanyi</h3><p>Mengikuti perlombaan sebagai kesempatan untuk menunjukkan kemampuan, melatih mental, dan belajar tampil dengan percaya diri.</p></article>
+        <article class="glass project-card reveal"><div class="project-top"><div class="project-icon">🎤</div><span class="tag">Pengembangan diri</span></div><h3>Berani Tampil</h3><p>Terus mengasah kemampuan vokal, membangun keberanian di depan audiens, dan mengambil pelajaran dari setiap penampilan.</p></article>
+      </div>
+    </section>
+
+    <section class="container" id="skill">
+      <div class="section-head reveal"><span class="kicker">03 — Skill</span><h2>What I love <em style="color:var(--sky)">to do.</em></h2><p>Hal yang saya sukai dan ingin terus kembangkan dari waktu ke waktu.</p></div>
+      <div class="skills-grid">
+        <div class="glass skill-card reveal"><div class="skill-symbol">🎶</div><h3>Menyanyi</h3><p>Mengekspresikan perasaan melalui nada, lirik, dan interpretasi lagu.</p></div>
+        <div class="glass skill-card reveal"><div class="skill-symbol">🎙️</div><h3>Kepercayaan Diri</h3><p>Belajar untuk tampil lebih tenang, berani, dan maksimal di depan orang lain.</p></div>
+        <div class="glass skill-card reveal"><div class="skill-symbol">🌱</div><h3>Terus Belajar</h3><p>Terbuka pada masukan dan menjadikan pengalaman sebagai ruang bertumbuh.</p></div>
+      </div>
+    </section>
+
+    <section class="container" id="experience">
+      <div class="section-head reveal"><span class="kicker">04 — Experience</span><h2>My learning <em style="color:var(--sky)">journey.</em></h2><p>Setiap pengalaman bukan hanya tentang hasil, tetapi juga tentang proses yang membentuk diri.</p></div>
+      <div class="glass reveal"><div class="experience-wrap">
+        <div class="timeline-item"><span class="year">Pengalaman</span><h3>Lomba Menyanyi</h3><p>Mengikuti perlombaan menyanyi untuk mengembangkan kemampuan vokal, melatih keberanian, dan mendapatkan pengalaman baru. Setiap penampilan menjadi motivasi untuk terus berlatih dan berkembang.</p></div>
+        <div class="timeline-item"><span class="year">Saat ini</span><h3>Belajar dan Mengembangkan Potensi</h3><p>Menjalani kegiatan sebagai santri MA Persis Padalarang sambil terus mengasah minat di bidang musik dan seni.</p></div>
+      </div></div>
+    </section>
+
+    <section class="container" id="kontak">
+      <div class="glass contact-box reveal"><span class="kicker">Let's keep growing</span><h2>Thank you for <em style="color:var(--sky)">visiting!</em></h2><p>Terima kasih sudah berkunjung ke portfolio saya. Semoga kita sama-sama terus belajar, berani mencoba, dan meraih mimpi.</p><a class="btn primary" href="#beranda">Kembali ke atas ↑</a></div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Shaufani Aqilla Elsyafaraz</span><span>Made with ♡ and a little stardust</span></div></footer>
+  <script>
+    // Menu navigasi responsif
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+
+    // Animasi elemen saat masuk ke layar
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Menandai menu sesuai bagian yang sedang dibaca
+    const sections = document.querySelectorAll('main section[id]');
+    const links = document.querySelectorAll('.nav-links a');
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => sectionObserver.observe(section));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
