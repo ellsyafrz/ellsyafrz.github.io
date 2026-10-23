@@ -1,189 +1,1070 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1d4d" />
-  <title>Shaufani Aqilla Elsyafaraz | Portfolio</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
-    :root{--navy:#071536;--blue:#123b82;--sky:#8ed8ff;--ice:#eaf7ff;--white:#f8fcff;--muted:#b8c9e7;--line:rgba(255,255,255,.15)}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:85px}
-    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.65;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 80% 10%,rgba(48,126,222,.28),transparent 35%),radial-gradient(ellipse at 0% 65%,rgba(48,126,222,.16),transparent 36%),linear-gradient(145deg,#071536 0%,#0a2050 55%,#071536 100%)}
-    a{color:inherit;text-decoration:none}
-    .stars{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.45;background-image:radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 75% 20%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 60% 70%,#9bdfff 50%,transparent 60%),radial-gradient(1px 1px at 35% 80%,#fff 50%,transparent 60%);background-size:240px 220px,300px 280px,360px 330px,280px 260px}
-    .container{width:min(1120px,90%);margin:auto}
-    nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(7,21,54,.78);border-bottom:1px solid var(--line)}
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-weight:700;letter-spacing:.08em;font-size:.92rem}.brand span{color:var(--sky)}
-    .nav-links{display:flex;align-items:center;gap:28px;font-size:.9rem;color:var(--muted)}
-    .nav-links a{transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--sky)}
-    .menu-btn{display:none;background:none;color:white;border:1px solid var(--line);padding:7px 11px;border-radius:10px;font-size:1.1rem}
-    section{padding:100px 0}
-    .hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px;padding-top:75px;padding-bottom:80px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid rgba(142,216,255,.35);border-radius:999px;color:var(--sky);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(142,216,255,.07)}
-    .dot{width:7px;height:7px;background:#8ed8ff;border-radius:50%;box-shadow:0 0 14px #8ed8ff}
-    h1,h2,h3{line-height:1.15}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.4rem);letter-spacing:-.04em;margin:25px 0 20px}
-    h1 em{font-style:normal;color:var(--sky)}
-    .hero p{max-width:570px;color:var(--muted);font-size:1.05rem}
-    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:13px;font-weight:700;font-size:.9rem;transition:transform .2s,box-shadow .2s}
-    .btn:hover{transform:translateY(-3px)}
-    .primary{background:linear-gradient(120deg,#a3e4ff,#5db9f3);color:#071536;box-shadow:0 10px 30px rgba(93,185,243,.2)}
-    .secondary{border:1px solid var(--line);color:var(--white);background:rgba(255,255,255,.04)}
-    .hero-art{position:relative;display:grid;place-items:center;min-height:420px}
-    .orbit{position:absolute;width:min(390px,85vw);aspect-ratio:1;border:1px solid rgba(142,216,255,.24);border-radius:50%;animation:rotate 28s linear infinite}
-    .orbit:before,.orbit:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--sky);box-shadow:0 0 25px #8ed8ff}
-    .orbit:before{top:15%;left:15%}.orbit:after{bottom:17%;right:10%;width:7px;height:7px}
-    .portrait-card{position:relative;width:min(290px,75vw);height:350px;border:1px solid rgba(255,255,255,.22);border-radius:150px 150px 30px 30px;background:linear-gradient(155deg,rgba(142,216,255,.23),rgba(31,74,145,.16));box-shadow:0 25px 90px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .portrait-card:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,#72c9ff 0%,rgba(65,143,224,.22) 55%,transparent 70%);top:30px}
-    .monogram{position:relative;font-family:'Playfair Display',serif;font-size:6rem;color:#eaf7ff;text-shadow:0 0 35px rgba(142,216,255,.6);letter-spacing:-.1em}
-    .floating-note{position:absolute;padding:13px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(11,31,73,.86);backdrop-filter:blur(12px);box-shadow:0 15px 40px rgba(0,0,0,.18);font-size:.82rem}
-    .floating-note strong{display:block;color:var(--sky);font-size:1rem}.note-one{top:14%;right:-2%}.note-two{bottom:12%;left:-2%}
-    .section-head{margin-bottom:38px;max-width:650px}.kicker{color:var(--sky);text-transform:uppercase;font-size:.78rem;letter-spacing:.18em;font-weight:700}
-    h2{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4vw,3.3rem);margin:12px 0 15px}
-    .section-head p,.muted{color:var(--muted)}
-    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
-    .glass{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:28px}
-    .quote-mark{font-family:'Playfair Display',serif;font-size:4rem;line-height:.8;color:var(--sky)}
-    .about-quote{font-family:'Playfair Display',serif;font-size:1.45rem;line-height:1.5;margin:18px 0}
-    .info-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-    .info-item{padding:15px;border-radius:14px;background:rgba(142,216,255,.06);border:1px solid rgba(142,216,255,.12)}
-    .info-item small{display:block;color:var(--muted);font-size:.76rem;margin-bottom:4px}.info-item strong{font-size:.95rem}
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .project-card{min-height:255px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
-    .project-card:hover{transform:translateY(-6px);border-color:rgba(142,216,255,.5)}
-    .project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-    .project-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:rgba(142,216,255,.12);font-size:1.5rem}
-    .tag{font-size:.72rem;color:var(--sky);border:1px solid rgba(142,216,255,.28);padding:6px 10px;border-radius:999px}
-    .project-card h3{font-size:1.3rem;margin-bottom:10px}.project-card p{color:var(--muted);font-size:.92rem}
-    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .skill-card{text-align:center;padding:30px 22px}
-    .skill-symbol{font-size:2rem;width:68px;height:68px;display:grid;place-items:center;border-radius:22px;margin:0 auto 20px;background:linear-gradient(145deg,rgba(142,216,255,.2),rgba(142,216,255,.04));border:1px solid rgba(142,216,255,.2)}
-    .skill-card h3{margin-bottom:9px}.skill-card p{color:var(--muted);font-size:.88rem}
-    .experience-wrap{position:relative;padding-left:30px;border-left:1px solid rgba(142,216,255,.35);margin-left:10px}
-    .timeline-item{position:relative;padding:0 0 35px 18px}.timeline-item:last-child{padding-bottom:0}
-    .timeline-item:before{content:"";position:absolute;left:-36px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--sky);box-shadow:0 0 20px rgba(142,216,255,.65);border:3px solid var(--navy)}
-    .timeline-item .year{font-size:.78rem;color:var(--sky);letter-spacing:.1em;text-transform:uppercase}
-    .timeline-item h3{font-size:1.2rem;margin:8px 0}.timeline-item p{color:var(--muted);max-width:700px}
-    .contact-box{text-align:center;padding:55px 28px;background:radial-gradient(ellipse at 50% 0%,rgba(69,151,226,.2),transparent 65%),rgba(255,255,255,.035)}
-    .contact-box p{color:var(--muted);max-width:540px;margin:0 auto 25px}
-    footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
-    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-    @keyframes rotate{to{transform:rotate(360deg)}}
-    @media(max-width:760px){.nav-inner{height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 5%;background:rgba(7,21,54,.97);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.nav-links.open{display:flex}.hero{grid-template-columns:1fr;text-align:center;padding-top:60px;gap:10px}.hero p{margin:auto}.hero-actions{justify-content:center}.hero-art{min-height:390px}.note-one{right:0}.note-two{left:0}.about-grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.skill-card{padding:25px}.info-list{grid-template-columns:1fr 1fr}section{padding:75px 0}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Cute Store 🍵✨</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        matcha: {
+                            50: '#f4f8f3',
+                            100: '#e5eee3',
+                            200: '#cbdcc6',
+                            300: '#a3c29c',
+                            400: '#7ba473',
+                            500: '#5c8654', // Main Matcha
+                            600: '#476a40',
+                            700: '#395434',
+                            800: '#2f442b',
+                            900: '#273824',
+                        },
+                        cream: {
+                            100: '#fffdf7',
+                            200: '#fcf8ec',
+                            300: '#f7f0d8',
+                            400: '#eedfbc',
+                        },
+                        strawberry: '#ffb3c1',
+                        boba: '#4a3b32',
+                    },
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(3deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f8f3;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1a2419;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a3c29c;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7ba473;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-card {
+            background: rgba(39, 56, 36, 0.75);
+            backdrop-filter: blur(10px);
+        }
+        /* Cute Pattern Background */
+        .bg-pattern {
+            background-image: radial-gradient(#a3c29c 0.75px, transparent 0.75px), radial-gradient(#a3c29c 0.75px, #fcf8ec 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        .dark .bg-pattern {
+            background-image: radial-gradient(#395434 0.75px, transparent 0.75px), radial-gradient(#395434 0.75px, #182217 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+    </style>
 </head>
-<body>
-  <div class="stars" aria-hidden="true"></div>
-  <nav>
-    <div class="container nav-inner">
-      <a class="brand" href="#beranda">SA<span>.</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Buka menu navigasi" aria-expanded="false">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#beranda" class="active">Beranda</a><a href="#tentang">Tentang</a><a href="#project">Project</a><a href="#skill">Skill</a><a href="#experience">Experience</a>
-      </div>
-    </div>
-  </nav>
+<body class="bg-pattern text-matcha-900 dark:text-matcha-100 min-h-screen transition-colors duration-300 relative flex flex-col">
 
-  <main>
-    <section class="container hero" id="beranda">
-      <div class="hero-copy reveal">
-        <span class="eyebrow"><span class="dot"></span> Portfolio pribadi · 2026</span>
-        <h1>Hello,<br>I'm <em>Shaufani.</em></h1>
-        <p>Assalamu’alaikum! Selamat datang di ruang kecil saya. Saya Shaufani Aqilla Elsyafaraz, seorang santri MA Persis Padalarang yang senang mengekspresikan diri melalui musik dan terus berani mencoba hal baru.</p>
-        <div class="hero-actions"><a class="btn primary" href="#tentang">Kenali Saya <span>↗</span></a><a class="btn secondary" href="#project">Lihat Perjalanan <span>↓</span></a></div>
-      </div>
-      <div class="hero-art reveal" aria-label="Monogram dekoratif SA">
-        <div class="orbit"></div><div class="portrait-card"><span class="monogram">SA.</span></div>
-        <div class="floating-note note-one"><strong>♪ Music</strong><span>My happy place</span></div>
-        <div class="floating-note note-two"><strong>✦ Keep growing</strong><span>One step at a time</span></div>
-      </div>
-    </section>
+    <!-- Sparkle Effects Overlay Container -->
+    <div id="sparkle-container" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
 
-    <section class="container" id="tentang">
-      <div class="section-head reveal"><span class="kicker">01 — Tentang saya</span><h2>Small steps, <em style="color:var(--sky)">big dreams.</em></h2><p>Saya percaya setiap pengalaman adalah kesempatan untuk belajar, berkembang, dan mengenal potensi diri.</p></div>
-      <div class="about-grid">
-        <div class="glass reveal"><div class="quote-mark">“</div><p class="about-quote">Berani mencoba, terus belajar, dan jangan berhenti bermimpi.</p><p class="muted">Menjalani proses dengan hati yang tulus dan semangat yang positif.</p></div>
-        <div class="glass reveal"><h3 style="font-size:1.25rem;margin-bottom:8px">A little about me</h3><p class="muted">Saya adalah santri yang sedang belajar menyeimbangkan pendidikan, pengalaman, dan minat pribadi. Menyanyi menjadi salah satu cara saya mengekspresikan perasaan, melatih kepercayaan diri, dan memberikan yang terbaik di setiap kesempatan.</p>
-          <div class="info-list"><div class="info-item"><small>Nama</small><strong>Shaufani Aqilla Elsyafaraz</strong></div><div class="info-item"><small>Sekolah</small><strong>MA Persis Padalarang</strong></div><div class="info-item"><small>Minat</small><strong>Seni & musik</strong></div><div class="info-item"><small>Prinsip</small><strong>Belajar & bertumbuh</strong></div></div>
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-card border-b border-matcha-200/50 dark:border-matcha-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Logo & Mascot -->
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="scrollToTop()">
+                <div class="w-12 h-12 rounded-2xl bg-matcha-400 dark:bg-matcha-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-matcha-500/30 group-hover:rotate-12 transition-transform duration-300 relative">
+                    🍵
+                    <span class="absolute -top-1 -right-1 text-xs animate-bounce">✨</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl sm:text-2xl tracking-wide flex items-center gap-1 text-matcha-800 dark:text-matcha-100">
+                        MatchaCute <span class="text-sm px-2 py-0.5 rounded-full bg-strawberry text-white font-normal shadow-sm">Cafe</span>
+                    </h1>
+                    <p class="text-xs text-matcha-500 dark:text-matcha-300 font-medium">Sip Joy, Feel Soft ✨</p>
+                </div>
+            </div>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-md mx-4 relative">
+                <input type="text" id="search-input" oninput="filterProducts()" placeholder="Cari matcha kesukaanmu... 🍵" 
+                    class="w-full pl-11 pr-4 py-2.5 rounded-full bg-matcha-50 dark:bg-matcha-900/60 border-2 border-matcha-200 dark:border-matcha-700 focus:outline-none focus:border-matcha-500 text-sm transition-all shadow-inner">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-matcha-400"></i>
+            </div>
+
+            <!-- Actions Right -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Download Source Code Button -->
+                <button onclick="downloadSourceCode()" title="Download File Source Code" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-matcha-100 dark:bg-matcha-800 text-matcha-700 dark:text-matcha-200 hover:bg-matcha-200 dark:hover:bg-matcha-700 font-semibold text-xs transition-all shadow-sm active:scale-95">
+                    <i class="fa-solid fa-download text-matcha-500"></i>
+                    <span>Download Source</span>
+                </button>
+
+                <!-- Dark / Light Mode Toggle -->
+                <button id="theme-toggle" onclick="toggleTheme()" class="w-10 h-10 rounded-2xl bg-cream-200 dark:bg-matcha-800 flex items-center justify-center text-matcha-700 dark:text-yellow-300 hover:scale-110 active:scale-95 transition-all shadow-sm">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                </button>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCart()" class="relative p-2.5 sm:px-4 sm:py-2.5 bg-matcha-500 hover:bg-matcha-600 active:scale-95 text-white rounded-2xl font-semibold text-sm flex items-center gap-2 transition-all shadow-lg shadow-matcha-500/30 group">
+                    <i class="fa-solid fa-basket-shopping text-base group-hover:animate-bounce"></i>
+                    <span class="hidden sm:inline">Keranjang</span>
+                    <span id="cart-badge" class="bg-strawberry text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white dark:border-matcha-900 transition-all scale-0">0</span>
+                </button>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <section class="container" id="project">
-      <div class="section-head reveal"><span class="kicker">02 — Project</span><h2>Every stage is a <em style="color:var(--sky)">story.</em></h2><p>Pengalaman dan kegiatan yang menjadi bagian dari perjalanan saya dalam mengembangkan diri.</p></div>
-      <div class="projects">
-        <article class="glass project-card reveal"><div class="project-top"><div class="project-icon">🏆</div><span class="tag">Kompetisi</span></div><h3>Perlombaan Menyanyi</h3><p>Mengikuti perlombaan sebagai kesempatan untuk menunjukkan kemampuan, melatih mental, dan belajar tampil dengan percaya diri.</p></article>
-        <article class="glass project-card reveal"><div class="project-top"><div class="project-icon">🎤</div><span class="tag">Pengembangan diri</span></div><h3>Berani Tampil</h3><p>Terus mengasah kemampuan vokal, membangun keberanian di depan audiens, dan mengambil pelajaran dari setiap penampilan.</p></article>
-      </div>
-    </section>
+        <!-- Mobile Search Bar -->
+        <div class="px-4 pb-3 md:hidden">
+            <div class="relative">
+                <input type="text" id="search-input-mobile" oninput="syncAndFilter(this.value)" placeholder="Cari matcha kesukaanmu... 🍵" 
+                    class="w-full pl-10 pr-4 py-2 rounded-full bg-matcha-50 dark:bg-matcha-900/60 border border-matcha-200 dark:border-matcha-700 focus:outline-none focus:border-matcha-500 text-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-matcha-400 text-sm"></i>
+            </div>
+        </div>
+    </header>
 
-    <section class="container" id="skill">
-      <div class="section-head reveal"><span class="kicker">03 — Skill</span><h2>What I love <em style="color:var(--sky)">to do.</em></h2><p>Hal yang saya sukai dan ingin terus kembangkan dari waktu ke waktu.</p></div>
-      <div class="skills-grid">
-        <div class="glass skill-card reveal"><div class="skill-symbol">🎶</div><h3>Menyanyi</h3><p>Mengekspresikan perasaan melalui nada, lirik, dan interpretasi lagu.</p></div>
-        <div class="glass skill-card reveal"><div class="skill-symbol">🎙️</div><h3>Kepercayaan Diri</h3><p>Belajar untuk tampil lebih tenang, berani, dan maksimal di depan orang lain.</p></div>
-        <div class="glass skill-card reveal"><div class="skill-symbol">🌱</div><h3>Terus Belajar</h3><p>Terbuka pada masukan dan menjadikan pengalaman sebagai ruang bertumbuh.</p></div>
-      </div>
-    </section>
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full space-y-8">
 
-    <section class="container" id="experience">
-      <div class="section-head reveal"><span class="kicker">04 — Experience</span><h2>My learning <em style="color:var(--sky)">journey.</em></h2><p>Setiap pengalaman bukan hanya tentang hasil, tetapi juga tentang proses yang membentuk diri.</p></div>
-      <div class="glass reveal"><div class="experience-wrap">
-        <div class="timeline-item"><span class="year">Pengalaman</span><h3>Lomba Menyanyi</h3><p>Mengikuti perlombaan menyanyi untuk mengembangkan kemampuan vokal, melatih keberanian, dan mendapatkan pengalaman baru. Setiap penampilan menjadi motivasi untuk terus berlatih dan berkembang.</p></div>
-        <div class="timeline-item"><span class="year">Saat ini</span><h3>Belajar dan Mengembangkan Potensi</h3><p>Menjalani kegiatan sebagai santri MA Persis Padalarang sambil terus mengasah minat di bidang musik dan seni.</p></div>
-      </div></div>
-    </section>
+        <!-- HERO BANNER SECTION -->
+        <section class="relative rounded-3xl bg-gradient-to-r from-matcha-200 via-cream-200 to-matcha-100 dark:from-matcha-900 dark:via-matcha-800 dark:to-matcha-900 p-6 sm:p-10 border-2 border-matcha-200/60 dark:border-matcha-700/50 shadow-xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <!-- Background Decorative Blobs -->
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-matcha-300/30 dark:bg-matcha-600/20 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-strawberry/20 rounded-full blur-2xl"></div>
 
-    <section class="container" id="kontak">
-      <div class="glass contact-box reveal"><span class="kicker">Let's keep growing</span><h2>Thank you for <em style="color:var(--sky)">visiting!</em></h2><p>Terima kasih sudah berkunjung ke portfolio saya. Semoga kita sama-sama terus belajar, berani mencoba, dan meraih mimpi.</p><a class="btn primary" href="#beranda">Kembali ke atas ↑</a></div>
-    </section>
-  </main>
-  <footer><div class="container footer-inner"><span>© <span id="year"></span> Shaufani Aqilla Elsyafaraz</span><span>Made with ♡ and a little stardust</span></div></footer>
-  <script>
-    // Menu navigasi responsif
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
-      menuBtn.textContent = isOpen ? '✕' : '☰';
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.textContent = '☰';
-    }));
+            <!-- Hero Left Text -->
+            <div class="z-10 text-center md:text-left space-y-4 max-w-xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 dark:bg-matcha-800/80 border border-matcha-300 dark:border-matcha-600 text-xs font-bold text-matcha-700 dark:text-matcha-200 shadow-sm animate-bounce-slow">
+                    <span>🌱 100% Uji Ceremonial Grade Matcha</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-matcha-900 dark:text-white leading-tight">
+                    Matcha Makes Everything Better <span class="inline-block animate-pulse">🍵✨</span>
+                </h2>
+                <p class="text-sm sm:text-base text-matcha-700 dark:text-matcha-200 font-medium leading-relaxed">
+                    Rasakan kenikmatan matcha authentic Uji Kyoto yang creamy, lembut, dan bikin harimu makin gemas & berenergi!
+                </p>
+                <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
+                    <a href="#katalog" class="px-6 py-3 rounded-2xl bg-matcha-500 hover:bg-matcha-600 text-white font-bold text-sm shadow-lg shadow-matcha-500/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                        <span>Pesan Sekarang</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <button onclick="applyVoucherDirect('MATCHA CUTE')" class="px-5 py-3 rounded-2xl bg-cream-300 dark:bg-matcha-800 text-matcha-800 dark:text-matcha-100 font-bold text-sm hover:bg-cream-400 dark:hover:bg-matcha-700 border border-matcha-300/50 transition-all flex items-center gap-2 group">
+                        <i class="fa-solid fa-ticket text-strawberry group-hover:rotate-12 transition-transform"></i>
+                        <span>Klaim Diskon 15%</span>
+                    </button>
+                </div>
+            </div>
 
-    // Animasi elemen saat masuk ke layar
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+            <!-- Hero Right Mascot Visual -->
+            <div class="relative z-10 flex-shrink-0">
+                <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full bg-white/60 dark:bg-matcha-800/60 p-4 border-4 border-dashed border-matcha-300 dark:border-matcha-600 flex items-center justify-center shadow-2xl relative">
+                    <!-- Central Cute Character Illustration (SVG) -->
+                    <svg class="w-48 h-48 sm:w-56 sm:h-56 animate-float drop-shadow-md" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Cup Body -->
+                        <path d="M50 70 C 50 60, 150 60, 150 70 L 140 160 C 140 175, 60 175, 60 160 Z" fill="#7ba473"/>
+                        <!-- Cream Top -->
+                        <path d="M45 70 C 45 50, 75 40, 100 45 C 125 40, 155 50, 155 70 C 155 75, 45 75, 45 70 Z" fill="#fffdf7"/>
+                        <!-- Strawberry Top -->
+                        <circle cx="100" cy="38" r="14" fill="#ffb3c1"/>
+                        <path d="M100 24 Q 102 20 106 20" stroke="#5c8654" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Kawaii Face -->
+                        <!-- Eyes -->
+                        <circle cx="80" cy="110" r="6" fill="#2f442b"/>
+                        <circle cx="120" cy="110" r="6" fill="#2f442b"/>
+                        <circle cx="82" cy="108" r="2" fill="white"/>
+                        <circle cx="122" cy="108" r="2" fill="white"/>
+                        <!-- Cheeks -->
+                        <ellipse cx="72" cy="118" rx="7" ry="4" fill="#ffb3c1" opacity="0.8"/>
+                        <ellipse cx="128" cy="118" rx="7" ry="4" fill="#ffb3c1" opacity="0.8"/>
+                        <!-- Smile Mouth -->
+                        <path d="M 93 120 Q 100 128 107 120" stroke="#2f442b" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Boba Straw -->
+                        <path d="M 125 30 L 140 90" stroke="#f7f0d8" stroke-width="12" stroke-linecap="round"/>
+                    </svg>
+
+                    <!-- Floating Floating Accents -->
+                    <div class="absolute top-2 left-2 text-2xl animate-bounce">🍃</div>
+                    <div class="absolute bottom-4 left-4 text-2xl animate-pulse">✨</div>
+                    <div class="absolute top-8 right-2 text-2xl animate-float">🧋</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORY FILTERS & BAR -->
+        <section id="katalog" class="space-y-6 pt-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-matcha-900 dark:text-white flex items-center gap-2">
+                        <span>Menu Matcha Pilihan</span>
+                        <span class="text-xs font-normal px-3 py-1 rounded-full bg-matcha-200 dark:bg-matcha-800 text-matcha-700 dark:text-matcha-300">Fresh Everyday</span>
+                    </h3>
+                    <p class="text-xs text-matcha-600 dark:text-matcha-400">Pilih sajian manis & harum racikan barista kami 💚</p>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 no-scrollbar">
+                    <button onclick="setCategory('all')" id="cat-all" class="cat-btn active px-4 py-2 rounded-2xl text-xs font-bold transition-all shadow-sm bg-matcha-500 text-white whitespace-nowrap">
+                        Semua Menu 🌟
+                    </button>
+                    <button onclick="setCategory('minuman')" id="cat-minuman" class="cat-btn px-4 py-2 rounded-2xl text-xs font-bold transition-all shadow-sm bg-white dark:bg-matcha-800 text-matcha-700 dark:text-matcha-200 hover:bg-matcha-100 whitespace-nowrap">
+                        Minuman Segar 🧋
+                    </button>
+                    <button onclick="setCategory('dessert')" id="cat-dessert" class="cat-btn px-4 py-2 rounded-2xl text-xs font-bold transition-all shadow-sm bg-white dark:bg-matcha-800 text-matcha-700 dark:text-matcha-200 hover:bg-matcha-100 whitespace-nowrap">
+                        Dessert & Kue 🍰
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dynamic insertion via JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 bg-matcha-200/50 dark:bg-matcha-950 border-t border-matcha-300/40 dark:border-matcha-800 py-8 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2 text-2xl font-bold text-matcha-800 dark:text-matcha-200">
+                <span>🍵</span> MatchaCute Cafe
+            </div>
+            <p class="text-xs text-matcha-600 dark:text-matcha-400 max-w-md mx-auto">
+                Dibuat dengan cinta, ketenangan, dan bubuk matcha Ceremonial Grade kualitas terbaik untuk menemani harimu.
+            </p>
+            <div class="flex justify-center items-center gap-4 text-matcha-500 text-sm">
+                <a href="#" class="hover:text-matcha-700 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-matcha-700 transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-matcha-700 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="pt-2 text-[11px] text-matcha-500/70 border-t border-matcha-300/30 dark:border-matcha-800/50 max-w-xs mx-auto">
+                &copy; 2026 MatchaCute Store. All Rights Reserved. Cute & Fresh! ✨
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL CUSTOMIZATION (PRODUCT DETAIL) -->
+    <div id="custom-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white dark:bg-matcha-900 w-full max-w-lg rounded-3xl p-6 shadow-2xl border-2 border-matcha-200 dark:border-matcha-700 transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            
+            <div class="flex justify-between items-start gap-4">
+                <div class="flex items-center gap-3">
+                    <span id="modal-emoji" class="text-4xl p-2 bg-matcha-100 dark:bg-matcha-800 rounded-2xl">🍵</span>
+                    <div>
+                        <h3 id="modal-title" class="font-bold text-xl text-matcha-900 dark:text-white">Product Title</h3>
+                        <p id="modal-price" class="text-matcha-600 dark:text-matcha-300 font-bold text-sm">Rp 0</p>
+                    </div>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-matcha-100 dark:bg-matcha-800 text-matcha-600 dark:text-matcha-300 hover:bg-strawberry hover:text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="mt-6 space-y-5 text-sm">
+                <!-- Sweetness Level -->
+                <div id="section-sweetness">
+                    <label class="block font-bold text-xs uppercase tracking-wider text-matcha-700 dark:text-matcha-300 mb-2">
+                        🍬 Level Gula (Sweetness)
+                    </label>
+                    <div class="grid grid-cols-5 gap-2">
+                        <button type="button" onclick="selectSweetness(this, '0%')" class="opt-sweet py-2 rounded-xl border border-matcha-200 dark:border-matcha-700 text-xs font-semibold text-center hover:bg-matcha-100 dark:hover:bg-matcha-800">0%</button>
+                        <button type="button" onclick="selectSweetness(this, '25%')" class="opt-sweet py-2 rounded-xl border border-matcha-200 dark:border-matcha-700 text-xs font-semibold text-center hover:bg-matcha-100 dark:hover:bg-matcha-800">25%</button>
+                        <button type="button" onclick="selectSweetness(this, '50%')" class="opt-sweet py-2 rounded-xl border border-matcha-200 dark:border-matcha-700 text-xs font-semibold text-center hover:bg-matcha-100 dark:hover:bg-matcha-800">50%</button>
+                        <button type="button" onclick="selectSweetness(this, '75%')" class="opt-sweet py-2 rounded-xl border border-matcha-200 dark:border-matcha-700 text-xs font-semibold text-center hover:bg-matcha-100 dark:hover:bg-matcha-800">75%</button>
+                        <button type="button" onclick="selectSweetness(this, '100%')" class="opt-sweet active-opt py-2 rounded-xl border-2 border-matcha-500 bg-matcha-100 dark:bg-matcha-800 text-xs font-bold text-center">100%</button>
+                    </div>
+                </div>
+
+                <!-- Ice Level -->
+                <div id="section-ice">
+                    <label class="block font-bold text-xs uppercase tracking-wider text-matcha-700 dark:text-matcha-300 mb-2">
+                        🧊 Level Es (Ice Level)
+                    </label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" onclick="selectIce(this, 'No Ice')" class="opt-ice py-2 rounded-xl border border-matcha-200 dark:border-matcha-700 text-xs font-semibold text-center hover:bg-matcha-100 dark:hover:bg-matcha-800">Tanpa Es</button>
+                        <button type="button" onclick="selectIce(this, 'Less Ice')" class="opt-ice py-2 rounded-xl border border-matcha-200 dark:border-matcha-700 text-xs font-semibold text-center hover:bg-matcha-100 dark:hover:bg-matcha-800">Sedikit Es</button>
+                        <button type="button" onclick="selectIce(this, 'Normal Ice')" class="opt-ice active-opt py-2 rounded-xl border-2 border-matcha-500 bg-matcha-100 dark:bg-matcha-800 text-xs font-bold text-center">Normal Es</button>
+                    </div>
+                </div>
+
+                <!-- Extra Toppings -->
+                <div>
+                    <label class="block font-bold text-xs uppercase tracking-wider text-matcha-700 dark:text-matcha-300 mb-2">
+                        ✨ Topping Tambahan (Opsional)
+                    </label>
+                    <div class="space-y-2">
+                        <label class="flex items-center justify-between p-2.5 rounded-xl border border-matcha-200 dark:border-matcha-700 cursor-pointer hover:bg-matcha-50 dark:hover:bg-matcha-800/50">
+                            <span class="flex items-center gap-2 text-xs font-medium">
+                                <input type="checkbox" value="Matcha Boba" data-price="4000" class="top-check accent-matcha-500 rounded">
+                                🧋 Matcha Boba Chewy
+                            </span>
+                            <span class="text-xs text-matcha-600 dark:text-matcha-300 font-bold">+Rp 4.000</span>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl border border-matcha-200 dark:border-matcha-700 cursor-pointer hover:bg-matcha-50 dark:hover:bg-matcha-800/50">
+                            <span class="flex items-center gap-2 text-xs font-medium">
+                                <input type="checkbox" value="Whipped Cream" data-price="5000" class="top-check accent-matcha-500 rounded">
+                                🍦 Whipped Cream Soft
+                            </span>
+                            <span class="text-xs text-matcha-600 dark:text-matcha-300 font-bold">+Rp 5.000</span>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl border border-matcha-200 dark:border-matcha-700 cursor-pointer hover:bg-matcha-50 dark:hover:bg-matcha-800/50">
+                            <span class="flex items-center gap-2 text-xs font-medium">
+                                <input type="checkbox" value="Matcha Ice Cream Scoop" data-price="7000" class="top-check accent-matcha-500 rounded">
+                                🍨 Scoop Es Krim Matcha
+                            </span>
+                            <span class="text-xs text-matcha-600 dark:text-matcha-300 font-bold">+Rp 7.000</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Notes for Barista -->
+                <div>
+                    <label class="block font-bold text-xs uppercase tracking-wider text-matcha-700 dark:text-matcha-300 mb-1">
+                        📝 Catatan Khusus
+                    </label>
+                    <input type="text" id="custom-notes" placeholder="Contoh: Tolong pisahkan es, tambahkan sedotan cute..." 
+                        class="w-full px-3 py-2 rounded-xl bg-matcha-50 dark:bg-matcha-800 border border-matcha-200 dark:border-matcha-700 text-xs focus:outline-none focus:border-matcha-500">
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-matcha-200 dark:border-matcha-700 flex items-center gap-3">
+                <button onclick="confirmAddToCart()" class="flex-1 py-3 bg-matcha-500 hover:bg-matcha-600 text-white font-bold rounded-2xl shadow-lg shadow-matcha-500/30 active:scale-95 transition-all text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Masukkan ke Keranjang</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CART DRAWER (SLIDE-IN) -->
+    <div id="cart-drawer-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-matcha-900 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        
+        <!-- Drawer Header -->
+        <div class="p-5 border-b border-matcha-200 dark:border-matcha-800 flex items-center justify-between bg-matcha-50 dark:bg-matcha-900">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🛒</span>
+                <h3 class="font-bold text-lg text-matcha-900 dark:text-white">Keranjang Pesanan</h3>
+            </div>
+            <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-matcha-200 dark:bg-matcha-800 text-matcha-700 dark:text-matcha-200 hover:bg-strawberry hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Dynamic Cart Content -->
+        </div>
+
+        <!-- Voucher Section -->
+        <div class="px-5 py-3 bg-cream-100 dark:bg-matcha-950 border-t border-matcha-200 dark:border-matcha-800">
+            <div class="flex gap-2">
+                <input type="text" id="voucher-input" placeholder="Kode Promo (ex: MATCHA CUTE)" 
+                    class="flex-1 px-3 py-1.5 rounded-xl border border-matcha-300 dark:border-matcha-700 bg-white dark:bg-matcha-800 text-xs focus:outline-none uppercase font-bold">
+                <button onclick="applyVoucher()" class="px-3 py-1.5 bg-matcha-600 text-white rounded-xl font-bold text-xs hover:bg-matcha-700 transition">
+                    Gunakan
+                </button>
+            </div>
+            <p id="voucher-msg" class="text-[11px] mt-1 font-semibold text-strawberry hidden"></p>
+        </div>
+
+        <!-- Cart Footer & Price Breakdown -->
+        <div class="p-5 border-t border-matcha-200 dark:border-matcha-800 bg-matcha-50 dark:bg-matcha-950 space-y-2 text-xs">
+            <div class="flex justify-between text-matcha-700 dark:text-matcha-300">
+                <span>Subtotal</span>
+                <span id="summary-subtotal" class="font-bold">Rp 0</span>
+            </div>
+            <div class="flex justify-between text-matcha-700 dark:text-matcha-300">
+                <span>Diskon Promo</span>
+                <span id="summary-discount" class="font-bold text-strawberry">-Rp 0</span>
+            </div>
+            <div class="flex justify-between text-matcha-700 dark:text-matcha-300">
+                <span>Pajak & Biaya Cute (10%)</span>
+                <span id="summary-tax" class="font-bold">Rp 0</span>
+            </div>
+            <div class="flex justify-between text-base font-extrabold text-matcha-900 dark:text-white pt-2 border-t border-matcha-200 dark:border-matcha-800">
+                <span>Total Biaya</span>
+                <span id="summary-total" class="text-matcha-600 dark:text-matcha-400">Rp 0</span>
+            </div>
+
+            <button onclick="openCheckoutModal()" id="btn-checkout" class="w-full mt-3 py-3 rounded-2xl bg-matcha-500 hover:bg-matcha-600 active:scale-95 text-white font-bold text-sm shadow-lg shadow-matcha-500/30 transition-all flex items-center justify-center gap-2">
+                <span>Lanjut ke Checkout</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- CHECKOUT & RECEIPT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white dark:bg-matcha-900 w-full max-w-lg rounded-3xl p-6 shadow-2xl border-2 border-matcha-200 dark:border-matcha-700 transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            
+            <!-- Checkout Step 1: Form -->
+            <div id="checkout-step-form">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-lg text-matcha-900 dark:text-white flex items-center gap-2">
+                        <span>📝</span> Form Pemesanan Cute
+                    </h3>
+                    <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-matcha-100 dark:bg-matcha-800 text-matcha-600 dark:text-matcha-300 flex items-center justify-center">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <form id="order-form" onsubmit="processOrder(event)" class="space-y-4 text-xs">
+                    <div>
+                        <label class="block font-bold text-matcha-700 dark:text-matcha-300 mb-1">Nama Pemesan Cute ✨</label>
+                        <input type="text" id="cust-name" required placeholder="Masukkan nama kamu..." 
+                            class="w-full px-3 py-2.5 rounded-xl border border-matcha-300 dark:border-matcha-700 bg-matcha-50 dark:bg-matcha-800 focus:outline-none focus:border-matcha-500 font-medium">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-matcha-700 dark:text-matcha-300 mb-1">Nomor WhatsApp / HP 📱</label>
+                        <input type="tel" id="cust-phone" required placeholder="0812xxxxxxx" 
+                            class="w-full px-3 py-2.5 rounded-xl border border-matcha-300 dark:border-matcha-700 bg-matcha-50 dark:bg-matcha-800 focus:outline-none focus:border-matcha-500 font-medium">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-matcha-700 dark:text-matcha-300 mb-1">Metode Pembayaran 💳</label>
+                        <select id="payment-method" class="w-full px-3 py-2.5 rounded-xl border border-matcha-300 dark:border-matcha-700 bg-matcha-50 dark:bg-matcha-800 focus:outline-none focus:border-matcha-500 font-medium">
+                            <option value="QRIS Matcha Pay">QRIS Matcha Pay (Instant Flash)</option>
+                            <option value="E-Wallet Cute (Gopay/Ovo/Dana)">E-Wallet Cute (Gopay/Ovo/Dana)</option>
+                            <option value="Transfer Bank Sweet">Transfer Bank Sweet</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 mt-2 rounded-2xl bg-matcha-500 hover:bg-matcha-600 text-white font-bold text-sm shadow-lg shadow-matcha-500/30 active:scale-95 transition-all">
+                        Bayar Sekarang & Buat Resi 🍵
+                    </button>
+                </form>
+            </div>
+
+            <!-- Checkout Step 2: Digital Receipt -->
+            <div id="checkout-step-receipt" class="hidden space-y-4">
+                <div class="text-center space-y-1">
+                    <div class="inline-block p-3 rounded-full bg-matcha-100 dark:bg-matcha-800 text-matcha-600 text-3xl animate-bounce">
+                        🎉
+                    </div>
+                    <h3 class="font-extrabold text-xl text-matcha-900 dark:text-white">Pesanan Berhasil!</h3>
+                    <p class="text-xs text-matcha-600 dark:text-matcha-300">Terima kasih telah memesan di MatchaCute Cafe ✨</p>
+                </div>
+
+                <!-- Printable Receipt Paper Design -->
+                <div id="printable-receipt" class="p-5 rounded-2xl bg-cream-100 dark:bg-matcha-950 border-2 border-dashed border-matcha-300 dark:border-matcha-700 text-xs font-mono space-y-3 shadow-inner">
+                    <div class="text-center pb-2 border-b border-dashed border-matcha-300 dark:border-matcha-700">
+                        <p class="font-bold text-sm tracking-widest text-matcha-900 dark:text-matcha-100">MATCHA CUTE CAFE</p>
+                        <p class="text-[10px] text-matcha-600 dark:text-matcha-400">Jl. Kyoto Aesthetic No. 88</p>
+                        <p id="receipt-date" class="text-[10px] text-matcha-500"></p>
+                    </div>
+
+                    <div class="space-y-1">
+                        <p><span class="text-matcha-600 dark:text-matcha-400">Pemesan:</span> <span id="rec-name" class="font-bold text-matcha-900 dark:text-white"></span></p>
+                        <p><span class="text-matcha-600 dark:text-matcha-400">Metode:</span> <span id="rec-payment" class="font-bold text-matcha-900 dark:text-white"></span></p>
+                        <p><span class="text-matcha-600 dark:text-matcha-400">Status:</span> <span class="text-emerald-600 font-bold">LUNAS ✨</span></p>
+                    </div>
+
+                    <div class="border-t border-dashed border-matcha-300 dark:border-matcha-700 pt-2 space-y-1.5" id="rec-items">
+                        <!-- Receipt Items -->
+                    </div>
+
+                    <div class="border-t border-dashed border-matcha-300 dark:border-matcha-700 pt-2 space-y-1 text-right">
+                        <p>Total: <span id="rec-total" class="font-bold text-sm text-matcha-900 dark:text-white"></span></p>
+                    </div>
+
+                    <div class="text-center pt-2 text-[10px] text-matcha-500 italic">
+                        "Semoga harimu senantiasa manis & menyegarkan! 🍃"
+                    </div>
+                </div>
+
+                <div class="flex gap-2 pt-2">
+                    <button onclick="window.print()" class="flex-1 py-2.5 rounded-xl border border-matcha-500 text-matcha-700 dark:text-matcha-200 font-bold text-xs hover:bg-matcha-100 dark:hover:bg-matcha-800 transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-print"></i> Print Struk
+                    </button>
+                    <button onclick="finishOrder()" class="flex-1 py-2.5 rounded-xl bg-matcha-500 text-white font-bold text-xs hover:bg-matcha-600 shadow transition">
+                        Selesai Belanja
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // --- DATA PRODUK MATCHA ---
+        const products = [
+            {
+                id: 1,
+                name: "Matcha Cloud Latte",
+                category: "minuman",
+                price: 28000,
+                rating: "4.9",
+                grade: "Ceremonial",
+                emoji: "🧋",
+                desc: "Espresso matcha lembut dilapisi foam susu manis bagaikan awan.",
+                bg: "from-green-100 to-matcha-100"
+            },
+            {
+                id: 2,
+                name: "Strawberry Matcha Sweet",
+                category: "minuman",
+                price: 32000,
+                rating: "5.0",
+                grade: "Ceremonial",
+                emoji: "🍓",
+                desc: "Perpaduan selai stroberi asli dengan matcha khas Uji Kyoto.",
+                bg: "from-pink-100 to-matcha-100"
+            },
+            {
+                id: 3,
+                name: "Boba Matcha Supreme",
+                category: "minuman",
+                price: 30000,
+                rating: "4.8",
+                grade: "Premium",
+                emoji: "🧋",
+                desc: "Matcha latte manis sedang dengan topping boba brown sugar chewy.",
+                bg: "from-amber-100 to-matcha-100"
+            },
+            {
+                id: 4,
+                name: "Matcha Espresso Tonic",
+                category: "minuman",
+                price: 35000,
+                rating: "4.7",
+                grade: "Ceremonial",
+                emoji: "🍸",
+                desc: "Sensasi segar gabungan tonic water, espresso shot, dan matcha.",
+                bg: "from-emerald-100 to-matcha-100"
+            },
+            {
+                id: 5,
+                name: "Cute Matcha Croissant",
+                category: "dessert",
+                price: 25000,
+                rating: "4.9",
+                grade: "Premium",
+                emoji: "🥐",
+                desc: "Croissant renyah berkulit emas melimpah lelehan matcha cream.",
+                bg: "from-yellow-100 to-matcha-100"
+            },
+            {
+                id: 6,
+                name: "Matcha Cheesecake Slice",
+                category: "dessert",
+                price: 38000,
+                rating: "5.0",
+                grade: "Ceremonial",
+                emoji: "🍰",
+                desc: "Keju lembut lumer di mulut bercita rasa harum matcha khas.",
+                bg: "from-green-100 to-matcha-200"
+            },
+            {
+                id: 7,
+                name: "Matcha Ice Cream Cone",
+                category: "dessert",
+                price: 22000,
+                rating: "4.8",
+                grade: "Premium",
+                emoji: "🍦",
+                desc: "Soft serve es krim matcha lembut dalam wafel renyah manis.",
+                bg: "from-cream-200 to-matcha-100"
+            },
+            {
+                id: 8,
+                name: "Matcha Soft Cookies",
+                category: "dessert",
+                price: 18000,
+                rating: "4.9",
+                grade: "Premium",
+                emoji: "🍪",
+                desc: "Kue kering lembut isi white chocolate lumer & bubuk matcha.",
+                bg: "from-amber-50 to-matcha-100"
+            }
+        ];
+
+        // --- GLOBAL APP STATE ---
+        let cart = [];
+        let activeCategory = 'all';
+        let currentCustomProduct = null;
+        let selectedSweetness = '100%';
+        let selectedIce = 'Normal Ice';
+        let appliedVoucherCode = '';
+        let discountPercent = 0;
+
+        // --- INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
+            initTheme();
+        });
+
+        // --- THEME MANAGEMENT ---
+        function initTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
         }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Menandai menu sesuai bagian yang sedang dibaca
-    const sections = document.querySelectorAll('main section[id]');
-    const links = document.querySelectorAll('.nav-links a');
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            triggerSparkle();
         }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    sections.forEach(section => sectionObserver.observe(section));
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
+        // --- RENDER PRODUCTS GRID ---
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            const searchVal = (document.getElementById('search-input').value || '').toLowerCase();
+
+            const filtered = products.filter(p => {
+                const matchCat = activeCategory === 'all' || p.category === activeCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchVal) || p.desc.toLowerCase().includes(searchVal);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 space-y-3">
+                        <span class="text-5xl animate-bounce inline-block">🍃</span>
+                        <p class="font-bold text-matcha-700 dark:text-matcha-300">Produk matcha tidak ditemukan...</p>
+                        <p class="text-xs text-matcha-500">Coba kata kunci lain ya!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(p => `
+                <div class="group relative rounded-3xl bg-white dark:bg-matcha-900 border-2 border-matcha-200/70 dark:border-matcha-800 p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                    
+                    <!-- Grade & Rating Badge -->
+                    <div class="flex items-center justify-between gap-2 mb-3 z-10">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${p.grade === 'Ceremonial' ? 'bg-strawberry text-white' : 'bg-matcha-200 dark:bg-matcha-800 text-matcha-800 dark:text-matcha-200'}">
+                            ${p.grade}
+                        </span>
+                        <div class="flex items-center gap-1 bg-cream-200 dark:bg-matcha-800 px-2 py-0.5 rounded-full text-xs font-bold text-amber-600 dark:text-amber-400">
+                            <i class="fa-solid fa-star text-[10px]"></i>
+                            <span>${p.rating}</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Illustration Image Block -->
+                    <div class="w-full h-40 rounded-2xl bg-gradient-to-br ${p.bg} dark:from-matcha-800 dark:to-matcha-950 flex items-center justify-center relative overflow-hidden group-hover:scale-102 transition-transform">
+                        <span class="text-6xl transform group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 drop-shadow">
+                            ${p.emoji}
+                        </span>
+                        <span class="absolute bottom-2 right-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity">✨</span>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="mt-4 space-y-1 flex-1">
+                        <h4 class="font-bold text-base text-matcha-900 dark:text-white group-hover:text-matcha-600 transition-colors">
+                            ${p.name}
+                        </h4>
+                        <p class="text-xs text-matcha-600 dark:text-matcha-400 line-clamp-2 leading-relaxed">
+                            ${p.desc}
+                        </p>
+                    </div>
+
+                    <!-- Price & Action Button -->
+                    <div class="mt-4 pt-3 border-t border-matcha-100 dark:border-matcha-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-matcha-400 font-medium">Harga</p>
+                            <p class="font-extrabold text-sm text-matcha-800 dark:text-matcha-100">
+                                Rp ${p.price.toLocaleString('id-ID')}
+                            </p>
+                        </div>
+                        <button onclick="openCustomModal(${p.id})" class="px-3.5 py-2 rounded-xl bg-matcha-500 hover:bg-matcha-600 active:scale-95 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-matcha-500/20 transition-all">
+                            <span>Pesan</span>
+                            <i class="fa-solid fa-plus text-[10px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+            `).join('');
+        }
+
+        // --- CATEGORY & SEARCH FILTERING ---
+        function setCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-matcha-500', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-matcha-800', 'text-matcha-700', 'dark:text-matcha-200');
+            });
+            const activeBtn = document.getElementById(`cat-${cat}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'dark:bg-matcha-800', 'text-matcha-700', 'dark:text-matcha-200');
+                activeBtn.classList.add('bg-matcha-500', 'text-white');
+            }
+            renderProducts();
+        }
+
+        function filterProducts() {
+            renderProducts();
+        }
+
+        function syncAndFilter(val) {
+            document.getElementById('search-input').value = val;
+            renderProducts();
+        }
+
+        // --- MODAL CUSTOMIZATION ---
+        function openCustomModal(productId) {
+            currentCustomProduct = products.find(p => p.id === productId);
+            if (!currentCustomProduct) return;
+
+            document.getElementById('modal-title').innerText = currentCustomProduct.name;
+            document.getElementById('modal-price').innerText = `Rp ${currentCustomProduct.price.toLocaleString('id-ID')}`;
+            document.getElementById('modal-emoji').innerText = currentCustomProduct.emoji;
+            document.getElementById('custom-notes').value = '';
+
+            // Toggle Minuman vs Dessert Options visibility
+            const isBeverage = currentCustomProduct.category === 'minuman';
+            document.getElementById('section-sweetness').style.display = isBeverage ? 'block' : 'none';
+            document.getElementById('section-ice').style.display = isBeverage ? 'block' : 'none';
+
+            // Reset toppings
+            document.querySelectorAll('.top-check').forEach(cb => cb.checked = false);
+
+            const modal = document.getElementById('custom-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.firstElementChild.classList.remove('scale-95');
+            modal.firstElementChild.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+        }
+
+        function selectSweetness(btn, val) {
+            selectedSweetness = val;
+            document.querySelectorAll('.opt-sweet').forEach(b => {
+                b.classList.remove('active-opt', 'border-2', 'border-matcha-500', 'bg-matcha-100', 'dark:bg-matcha-800', 'font-bold');
+                b.classList.add('border', 'border-matcha-200', 'dark:border-matcha-700', 'font-semibold');
+            });
+            btn.classList.add('active-opt', 'border-2', 'border-matcha-500', 'bg-matcha-100', 'dark:bg-matcha-800', 'font-bold');
+        }
+
+        function selectIce(btn, val) {
+            selectedIce = val;
+            document.querySelectorAll('.opt-ice').forEach(b => {
+                b.classList.remove('active-opt', 'border-2', 'border-matcha-500', 'bg-matcha-100', 'dark:bg-matcha-800', 'font-bold');
+                b.classList.add('border', 'border-matcha-200', 'dark:border-matcha-700', 'font-semibold');
+            });
+            btn.classList.add('active-opt', 'border-2', 'border-matcha-500', 'bg-matcha-100', 'dark:bg-matcha-800', 'font-bold');
+        }
+
+        function confirmAddToCart() {
+            if (!currentCustomProduct) return;
+
+            // Collect selected toppings
+            const toppings = [];
+            let extraPrice = 0;
+            document.querySelectorAll('.top-check:checked').forEach(cb => {
+                toppings.push(cb.value);
+                extraPrice += parseInt(cb.dataset.price || 0);
+            });
+
+            const notes = document.getElementById('custom-notes').value.trim();
+
+            const cartItem = {
+                cartId: Date.now(),
+                id: currentCustomProduct.id,
+                name: currentCustomProduct.name,
+                emoji: currentCustomProduct.emoji,
+                basePrice: currentCustomProduct.price,
+                unitPrice: currentCustomProduct.price + extraPrice,
+                qty: 1,
+                sweetness: currentCustomProduct.category === 'minuman' ? selectedSweetness : null,
+                ice: currentCustomProduct.category === 'minuman' ? selectedIce : null,
+                toppings: toppings,
+                notes: notes
+            };
+
+            cart.push(cartItem);
+            closeModal();
+            updateCartUI();
+            triggerSparkle();
+            toggleCart(true); // Open cart to show user item was added
+        }
+
+        // --- CART DRAWER MANAGEMENT ---
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+
+            const isOpen = !drawer.classList.contains('translate-x-full');
+
+            if (forceOpen || !isOpen) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function updateCartQty(cartId, delta) {
+            const idx = cart.findIndex(item => item.cartId === cartId);
+            if (idx !== -1) {
+                cart[idx].qty += delta;
+                if (cart[idx].qty <= 0) {
+                    cart.splice(idx, 1);
+                }
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const badge = document.getElementById('cart-badge');
+            
+            const totalQty = cart.reduce((sum, item) => sum += item.qty, 0);
+            
+            // Update Badge Count
+            badge.innerText = totalQty;
+            if (totalQty > 0) {
+                badge.classList.remove('scale-0');
+                badge.classList.add('scale-100');
+            } else {
+                badge.classList.remove('scale-100');
+                badge.classList.add('scale-0');
+            }
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center p-6 space-y-3 text-matcha-500">
+                        <span class="text-6xl animate-bounce">🛒</span>
+                        <p class="font-bold text-sm text-matcha-800 dark:text-matcha-200">Keranjang kamu masih kosong!</p>
+                        <p class="text-xs">Yuk, pilih produk matcha favoritmu dulu ✨</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="p-3.5 rounded-2xl bg-matcha-50 dark:bg-matcha-800/60 border border-matcha-200 dark:border-matcha-700 flex items-start gap-3 relative">
+                        <span class="text-3xl p-2 bg-white dark:bg-matcha-900 rounded-xl shadow-xs">${item.emoji}</span>
+                        <div class="flex-1 text-xs space-y-1">
+                            <h5 class="font-bold text-matcha-900 dark:text-white">${item.name}</h5>
+                            <p class="font-bold text-matcha-600 dark:text-matcha-300">Rp ${item.unitPrice.toLocaleString('id-ID')}</p>
+                            
+                            <!-- Custom Details -->
+                            ${item.sweetness ? `<p class="text-[10px] text-matcha-500">Gula: ${item.sweetness} | Es: ${item.ice}</p>` : ''}
+                            ${item.toppings.length > 0 ? `<p class="text-[10px] text-strawberry font-medium">Topping: ${item.toppings.join(', ')}</p>` : ''}
+                            ${item.notes ? `<p class="text-[10px] italic text-matcha-400">"${item.notes}"</p>` : ''}
+
+                            <!-- Quantity Adjuster -->
+                            <div class="flex items-center gap-2 pt-1">
+                                <button onclick="updateCartQty(${item.cartId}, -1)" class="w-6 h-6 rounded-lg bg-white dark:bg-matcha-700 border border-matcha-300 dark:border-matcha-600 flex items-center justify-center font-bold text-matcha-700 dark:text-matcha-200 hover:bg-strawberry hover:text-white transition">
+                                    -
+                                </button>
+                                <span class="font-bold text-xs">${item.qty}</span>
+                                <button onclick="updateCartQty(${item.cartId}, 1)" class="w-6 h-6 rounded-lg bg-white dark:bg-matcha-700 border border-matcha-300 dark:border-matcha-600 flex items-center justify-center font-bold text-matcha-700 dark:text-matcha-200 hover:bg-matcha-500 hover:text-white transition">
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            calculateTotals();
+        }
+
+        // --- VOUCHER & TOTALS ---
+        function applyVoucherDirect(code) {
+            document.getElementById('voucher-input').value = code;
+            toggleCart(true);
+            applyVoucher();
+        }
+
+        function applyVoucher() {
+            const code = (document.getElementById('voucher-input').value || '').trim().toUpperCase();
+            const msg = document.getElementById('voucher-msg');
+
+            if (code === "MATCHA CUTE") {
+                discountPercent = 0.15; // 15%
+                appliedVoucherCode = code;
+                msg.innerText = "✨ Voucher MATCHA CUTE (15%) Berhasil Dipasang!";
+                msg.classList.remove('hidden', 'text-red-500');
+                msg.classList.add('text-matcha-600');
+            } else if (code === "") {
+                discountPercent = 0;
+                appliedVoucherCode = "";
+                msg.classList.add('hidden');
+            } else {
+                discountPercent = 0;
+                appliedVoucherCode = "";
+                msg.innerText = "❌ Kode voucher tidak valid.";
+                msg.classList.remove('hidden', 'text-matcha-600');
+                msg.classList.add('text-red-500');
+            }
+
+            calculateTotals();
+        }
+
+        function calculateTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.unitPrice * item.qty), 0);
+            const discount = subtotal * discountPercent;
+            const tax = (subtotal - discount) * 0.10; // 10% tax/service
+            const total = (subtotal - discount) + tax;
+
+            document.getElementById('summary-subtotal').innerText = `Rp ${subtotal.toLocaleString('id-ID')}`;
+            document.getElementById('summary-discount').innerText = `-Rp ${discount.toLocaleString('id-ID')}`;
+            document.getElementById('summary-tax').innerText = `Rp ${tax.toLocaleString('id-ID')}`;
+            document.getElementById('summary-total').innerText = `Rp ${total.toLocaleString('id-ID')}`;
+
+            return { subtotal, discount, tax, total };
+        }
+
+        // --- CHECKOUT PROCESS ---
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                alert("Keranjang kamu masih kosong, pilih menu matcha dulu ya! 🍵");
+                return;
+            }
+
+            document.getElementById('checkout-step-form').classList.remove('hidden');
+            document.getElementById('checkout-step-receipt').classList.add('hidden');
+
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.firstElementChild.classList.remove('scale-95');
+            modal.firstElementChild.classList.add('scale-100');
+        }
+
+        function closeCheckoutModal() {
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+        }
+
+        function processOrder(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const payment = document.getElementById('payment-method').value;
+
+            const totals = calculateTotals();
+
+            // Populate Digital Receipt
+            document.getElementById('receipt-date').innerText = new Date().toLocaleString('id-ID');
+            document.getElementById('rec-name').innerText = name;
+            document.getElementById('rec-payment').innerText = payment;
+
+            const recItemsContainer = document.getElementById('rec-items');
+            recItemsContainer.innerHTML = cart.map(item => `
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold">${item.name} (x${item.qty})</p>
+                        <p class="text-[9px] text-matcha-500">${item.sweetness ? item.sweetness + ', ' + item.ice : ''} ${item.toppings.join('/')}</p>
+                    </div>
+                    <p class="font-bold">Rp ${(item.unitPrice * item.qty).toLocaleString('id-ID')}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('rec-total').innerText = `Rp ${totals.total.toLocaleString('id-ID')}`;
+
+            // Switch view to Receipt
+            document.getElementById('checkout-step-form').classList.add('hidden');
+            document.getElementById('checkout-step-receipt').classList.remove('hidden');
+
+            triggerSparkle();
+        }
+
+        function finishOrder() {
+            cart = [];
+            updateCartUI();
+            closeCheckoutModal();
+            toggleCart(false);
+            alert("Terima kasih atas pesananmu! Matcha lezat siap meluncur 🎉");
+        }
+
+        // --- DOWNLOAD SOURCE CODE FEATURE ---
+        function downloadSourceCode() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'indeks.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // --- CUTE VISUAL EFFECTS ---
+        function triggerSparkle() {
+            const container = document.getElementById('sparkle-container');
+            for (let i = 0; i < 12; i++) {
+                const el = document.createElement('div');
+                el.innerText = ['✨', '🍵', '🍃', '💖'][Math.floor(Math.random() * 4)];
+                el.className = 'absolute text-xl animate-ping pointer-events-none transition-all duration-1000';
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.top = Math.random() * 100 + 'vh';
+                container.appendChild(el);
+
+                setTimeout(() => el.remove(), 1000);
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
